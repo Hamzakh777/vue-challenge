@@ -48,7 +48,7 @@ export default {
     border: 1px solid #011627;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
 }
 .vdp-datepicker input[type="text"]:focus {
     outline: none;
