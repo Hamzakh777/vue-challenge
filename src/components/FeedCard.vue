@@ -1,23 +1,38 @@
 <template>
-    <div class="flex mb-8 p-8 rounded-lg w-full bg-white shadow-md">
-        <div class="w-full md:w-5/12 rounded-lg bg-gray-600">
-
+    <div class="flex mb-8 p-8 rounded-lg w-full bg-gray-900 shadow-md">
+        <div 
+            class="w-full md:w-72 rounded-lg bg-gray-600 bg-center bg-cover"
+            :style="`background-image: url(${repo.owner.avatar_url})`"
+        >
         </div>
         <div class="flex-grow pl-8">
-            <h2 class="mb-4 text-3xl font-bold text-gray-800">
-                Repository name
+            <h2 
+                class="mb-2 text-3xl font-bold text-white"
+            >
+                {{ repo.name }}
             </h2>
             <p class="mb-10 text-base font-normal text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in inventore nulla nostrum enim perspiciatis, est hic saepe consectetur. Odio quis molestiae consequatur pariatur sapiente cum eaque natus voluptatum autem. Eligendi repellendus aspernatur sed quis sunt ipsum nostrum suscipit voluptates.
+                {{ repo.description }}
             </p>
             <div class="mb-4">
-                <div class="inline-block p-2 px-4 rounded-md border border-gray-600 bg-gray-200 text-sm">
-                    <span>Stars: </span>
-                    <span>22 k</span>
+                <div class="inline-block p-2 px-4 rounded-md border border-gray-200 bg-gray-600 text-sm">
+                    <span>Stars </span>
+                    <span>{{ repo.stargazers_count }}</span>
+                </div>
+                <div class="inline-block ml-6 p-2 px-4 rounded-md border border-red-200 bg-red-500 text-sm">
+                    <span>Issues </span>
+                    <span>{{ repo.open_issues_count }}</span>
                 </div>
             </div>
             <div class="text-sm text-gray-600">
-                {{ `Submitted on 23/10/2100 by @fadfasdf` }}
+                {{ `Submitted on ${createAt} by` }}
+                <a 
+                    :href="repo.owner.html_url"
+                    class="hover:text-teal"
+                    target="_blank"
+                >
+                    {{ `@${repo.owner.login}` }}
+                </a>
             </div>
         </div>
     </div>
@@ -25,6 +40,19 @@
 
 <script>
     export default {
-        name: 'FeedCard'
+        name: 'FeedCard',
+
+        props: {
+            repo: {
+                type: Object, 
+                required: true
+            }
+        },
+
+        computed: {
+            createAt() {
+                return this.repo.pushed_at.split('T')[0];
+            }
+        }
     }
 </script>
