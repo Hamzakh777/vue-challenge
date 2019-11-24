@@ -8,9 +8,17 @@ module.exports = {
 				'md': '0.25rem'
 			},
 			colors: {
+				'black': '#121212',
 				'dark-blue': '#011627',
 				'platinum': '#E7E9EB',
+				'teal': '00BD9D',
 				'white': '#FFFDFD'
+			},
+			textColor: {
+				'teal': '#00BD9D'
+			},
+			spacing: {
+				'72': '18rem'
 			}
 		}
 	},
