@@ -1,7 +1,7 @@
 @tailwind base;
 
 body {
-    @apply bg-gray-100 font-montserrat;
+    @apply bg-black font-montserrat text-white;
 }
 
 @tailwind components;
