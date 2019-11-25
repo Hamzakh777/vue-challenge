@@ -1,11 +1,11 @@
 <template>
-    <div class="flex mb-8 p-8 rounded-lg w-full bg-gray-900 shadow-md">
+    <div class="flex flex-col md:flex-row mb-8 p-8 rounded-lg w-full bg-gray-900 shadow-md">
         <div 
-            class="w-full md:w-72 rounded-lg bg-gray-600 bg-center bg-cover"
+            class="w-full h-64 mb-6 md:h-auto md:w-72 md:mb-0 rounded-lg bg-gray-600 bg-center bg-cover"
             :style="`background-image: url(${repo.owner.avatar_url})`"
         >
         </div>
-        <div class="flex-grow pl-8">
+        <div class="flex-grow md:pl-8">
             <h2 
                 class="mb-2 text-3xl font-bold text-white"
             >
