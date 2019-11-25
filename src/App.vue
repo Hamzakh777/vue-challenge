@@ -2,11 +2,14 @@
 	<div class="container mx-auto mt-10">
         <div class="mb-20 py-4 flex flex-row justify-end">
             <div class="flex flex-shrink">
-                <!-- <div
-                    class="h-8 w-8 p-1 bg-dark-blue rounded-r-lg border border-dark-blue"
+                <div
+                    class="h-8 w-8 p-1-1/2 mr-3"
                 >
-                    <img src="/assets/icons/calendar.svg" >
-                </div> -->
+                    <img 
+
+                        src="/assets/icons/calendar.svg" 
+                    >
+                </div>
                 <datepicker
                     class="h-6 text-gray-800"
                     v-model="date"
