@@ -8,12 +8,16 @@
                     <img src="/assets/icons/calendar.svg" >
                 </div> -->
                 <datepicker
-                    class="h-6"
+                    class="h-6 text-gray-800"
+                    v-model="date"
+                    :disabledDates="disabledDates"
                 >
                 </datepicker>
             </div>
         </div>
-        <TheFeed/>
+        <TheFeed
+            :date="date"
+        />
     </div>
 </template>
 
@@ -31,13 +35,21 @@ export default {
 
     data() {
         return {
-            
+            date: new Date(),
+            disabledDates: {
+                from: new Date()
+            }
         }
     },
 
-    methods: {
+    created() {
+        // set the date to yesterday
+        const today = new Date()
+        const yesterday = new Date(today.setDate(today.getDate() - 1));
 
-    }
+        this.date = yesterday;
+        this.disabledDates.from = yesterday;
+    },
 };
 </script>
 
