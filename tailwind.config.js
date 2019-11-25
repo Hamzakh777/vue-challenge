@@ -18,6 +18,7 @@ module.exports = {
 				'teal': '#00BD9D'
 			},
 			spacing: {
+				'1-1/2': '0.375rem',
 				'72': '18rem'
 			}
 		}
