@@ -63,7 +63,7 @@
                     const data = await response.json();
                     
                     this.repositories = this.repositories.concat(data.items);
-                    this.setCurrentPage();
+                    this.updateCurrentPage();
                     this.calculateTotalPages(data.total_count);
                 } catch (error) {
                     console.error(error);
@@ -85,7 +85,7 @@
                 this.totalPages =  Math.trunc(total/30); 
             },
 
-            setCurrentPage() {
+            updateCurrentPage() {
                 this.currentPage += 1;
             }
         }
